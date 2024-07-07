@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Euphoria+Script&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pinyon+Script&family=Rouge+Script&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Kaushan+Script&family=Sacramento&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Tangerine:wght@400;700&display=swap"
+        rel="stylesheet">
+</head>
+<style>
+    .contact-us-container {
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .contact-us-container h2 {
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .contact-us-container form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-us-container label {
+      margin-bottom: 5px;
+    }
+
+    .contact-us-container input,
+    .contact-us-container textarea {
+      margin-bottom: 15px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    .contact-us-container input[readonly] {
+      background-color: #f0f0f0;
+      cursor: not-allowed;
+    }
+
+    .contact-us-container textarea {
+      height: 100px;
+      resize: vertical;
+    }
+
+    .contact-us-container button {
+      padding: 10px 15px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .contact-us-container button:hover {
+      background-color: #0056b3;
+    }
+
+    #form-response {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .pinyon-script-regular {
+        font-family: "Pinyon Script", cursive;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    .montserrat {
+        font-family: "Montserrat", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+
+    }
+
+    .tangerine-regular {
+        font-family: "Tangerine", cursive;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    .tangerine-bold {
+        font-family: "Tangerine", cursive;
+        font-weight: 700;
+        font-style: normal;
+    }
+</style>
+
+<body class="m-0 p-0">
+    <nav class="md:h-24 px-8 grid items-center">
+        <div class="md:grid md:grid-cols-12">
+            <div class="grid  col-span-3 justify-center  grid-cols-2">
+                <img class="cursor-pointer" src="../asset/logo.png.webp">
+            </div>
+            <div class="grid md:grid col-span-7 md:grid-rows-2">
+                <ul class="grid md:grid-cols-8 md:col-span-8  gap-4 justify-center items-center">
+                    <li class="cursor-pointer hover:text-pink-600 hover:text-xl"><a href="../src/home.html">Home</a>
+                    </li>
+                    <li class="cursor-pointer hover:text-pink-600 hover:text-xl"><a
+                            href="../src/website-1.html">About</a></li>
+                    <li class="cursor-pointer hover:text-pink-600 hover:text-xl"><a href="#">Services</a></li>
+                    <li class="cursor-pointer hover:text-pink-600 hover:text-xl"><a href="#">Shop</a></li>
+                    <li class="cursor-pointer hover:text-pink-600 hover:text-xl"><a href="#">pages</a></li>
+                    <li class="cursor-pointer hover:text-pink-600 hover:text-xl"><a href="#">Blog</a></li>
+                    <li class="cursor-pointer hover:text-pink-600 hover:text-xl"><a href="#">Contact</a></li>
+                    <div>
+                        <img class="cursor-pointer" src="../asset/search.png.webp">
+                    </div>
+                </ul>
+            </div>
+            <div class="md:grid col-span-2 pb-3 px-8 md:px-0 ">
+                <p
+                    class=" grid justify-center md:py-2 rounded-full border-black bg-pink-500 text-white  cursor-pointer text-xl text-center">
+                    GET A
+                    QUOTE</p>
+            </div>
+        </div>
+    </nav>
+    <div>
+        <div class="absolute">
+            <img class="h-56 w-auto " src="../asset/about-breadcrumb.jpg.webp">
+        </div>
+        <div class=" relative bg-white w-80 top-28 pt-8 pl-9 left-10">
+            <h2 class="text-5xl font-medium    bg-white  h-auto">About us</h2>
+            <div class=" text-base text-pink-600 mt-2">
+                <a href="about.html" class="">Home </a>
+                <span class="text-black leading-6 tracking-[10px]"> | about</span>
+            </div>
+        </div>
+        <div>
+
+        </div>
+    </div>
+
+    <div
+        class="grid grid-cols-1 md:grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 xl:grid-cols-2 2xl:grid-cols-2 mt-[100px] pt-[100px] ml-[50px]">
+
+        <div>
+            <div class="md:w-[120px] w-[100px]">
+                <img src="../asset/dot-3.jpg"
+                    class=" mt-[50px] md:mt-[50px]  ml-0 md:ml-[40px] lg:ml-[50px] xl:ml-[30px] "
+                    style="filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(6742%) hue-rotate(306deg) brightness(118%) contrast(76%);">
+
+            </div>
+            <div class=" ml-0 md:ml-[30px] lg:ml-[30px] xl:ml-[80px]">
+                <div>
+                    <h4
+                        class="uppercase text-pink-400 tracking-widest text-2xl md:text-2xl mt-[-120px] lg:mt-[-140px] md:mt-[-140px]  relative">
+                        make your face</h4>
+                </div>
+                <div>
+                    <h1 class="tangerine-regular tangerine-bold  text-3xl md:text-8xl md:text-wrap text-wrap "
+                        style="font-weight: 300;  letter-spacing: 5px; position: relative;">
+                        the center of attention</h1>
+                </div>
+
+                <div class="" style="font-family: Montserrat, ">
+                    <p class=" text-wrap w-screen md:w-[541px] tracking-widest text-sm md:text-base opacity-60">
+                        My love of makeup
+                        started young while often sneaking into my mother’s
+                        makeup vanity and playing with various shades of lipstick, eyeshadow and blush. Makeup became a
+                        full
+                        blown
+                        obsession after four years of art school where I learned to master the airbrush technique.
+                    </p>
+                </div>
+                <div class="mt-10  text-white no-underline uppercase font-medium">
+                    <a href="#more"
+                        class="read-more montserrat text-base md:text-xl md:px-[42px] px-[28px] md:py-[13px] py-[8px]  "
+                        style="border:1px solid #E65783;background-color:#E65783; border-radius: 30px; letter-spacing: 2px;  ">contact
+                        us</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div>
+            <img src="../asset/makeup-3.jpeg" class=" mt-[29px] md:w-[541px] w-full md:h-[441px] h-full">
+        </div>
+    </div>
+    <div class="mt-[300px] bg-fuchsia-100 ">
+        <div>
+            <img src="../asset/dot-3.jpg" class=" w-[120px] absolute ml-[50%] mt-[30px]"
+                style="filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);">
+
+            <h4 class="uppercase text-pink-400 tracking-widest text-lg md:text-2xl pt-[35px] relative text-center md:text-center mt-[-140px] md:mt-[-130px]  "
+                style="letter-spacing: 3px;">best makeup services</h4>
+
+            <h1 class="pinyon-script-regular font-light text-3xl md:text-7xl  relative text-center md:text-center "
+                style="letter-spacing: 5px; ">
+                professional makeup</h1>
+        </div>
+
+        <div
+            class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-7 mt-[100px] md:mt-[67px] pl-[0px] md:pl-[100px] pr-[0px] md:pr-[100px]">
+
+            <div>
+                <div><img src="../asset/daily-makeup.jpeg " class="w-full md:w-[255px] h-full md:h-[340px]"></div>
+                <div
+                    class="service-text uppercase montserrat hover:shadow-lg hover:shadow-black-700 hover:bg-white hover:-translate-y-6 w-[220px] h-[120px] border-0 duration-300">
+                    <h5 class="font-medium">Daily makeup</h5>
+                    <span class="text-pink-400">From $20.0</span>
+                </div>
+            </div>
+            <div>
+
+                <div
+                    class="service-text montserrat uppercase hover:shadow-lg hover:shadow-black-700 hover:translate-y-6 hover:bg-white border-0 w-[220px] h-[120px] duration-300">
+                    <h5 class="font-medium">wedding makeup</h5>
+                    <span class="text-pink-400">From $70.0</span>
+
+                </div>
+                <div><img src="../asset/wedding-makeup.jpeg" class=" h-full md:h-[340px]">
+                </div>
+
+            </div>
+            <div>
+                <div><img src="../asset/event-makeup.jpeg" class="w-full md:w-[255px] h-full md:h-[340px]"></div>
+                <div
+                    class="service-text uppercase montserrat hover:shadow-lg hover:shadow-black-700 hover:-translate-y-6 border-0 hover:bg-white w-[220px] h-[120px] duration-300">
+                    <h5 class="font-medium">event makeup</h5>
+                    <span class="text-pink-400">From $60.0</span>
+                </div>
+            </div>
+            <div>
+                <div
+                    class="service-text montserrat uppercase hover:shadow-lg hover:shadow-black-700 hover:translate-y-6 border-0 hover:bg-white w-[220px] h-[120px] duration-300">
+
+                    <h5 class="font-medium">creative makeup</h5>
+                    <span class="text-pink-400">From $70.0</span>
+                </div>
+                <div><img src="../asset/creative-makeup.jpeg" class="w-full md:w-[255px] h-full md:h-[340px] ">
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 pl-4 md:pl-0 mt-[10px]  ">
+        <div class="col-span-1 "></div>
+        <div class=" col-span-2 right-10">
+            <div class=" pt-32 flex ">
+                <div class="relative">
+                    <img src="../asset/ta-1.png.webp">
+                </div>
+                <div class="pt-2 pl-6">
+                    <h5 class="text-xl font-medium ">DANIELLE BENTON</h5>
+                    <span class="text-pink-600">Blogger/Client</span>
+                </div>
+
+
+            </div>
+            <div class="pt-6">
+                <p class="  text-base font-normal leading-10 tracking-wide text-wrap">
+                    Rachel you are so amazing at what you do! Thank you so much for everything! I felt so
+                    beautiful on our weddding day.Not only are you superwomen with a makeup brush.
+                    you are so lovely and such a delight to have around the morning of the wedding!!Any
+                    bride would be very lucky to have part of her big day. I am very grateful that you
+                    were part of mine
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="pt-[150px]">
+        <img class="h-[150px] w-full " src="../asset/newslatter-bg.jpg ">
+        <div class="grid grid-cols-2  relative bottom-24">
+            <div>
+                <h2 style="font-family: Sacramento" , cursive; class="text-white text-6xl">Subscribe to our newsletter
+                </h2>
+            </div>
+            <div class="pl-16">
+                <button
+                    class="rounded-full border-white border-2 p-2 bg-white absolute  right-40 text-xl text-pink-700 tracking-wider">SUBCRIBE</button>
+
+                <input class=" p-2 bg-[#000000c2] rounded-full border-white border-2 relative w-[450px] text-lg"
+                    placeholder="Email">
+            </div>
+        </div>
+    </div>
+    <div class="bg-fuchsia-100">
+        <div class="grid justify-center pt-8 px-24  grid items-center">
+            <div class="grid md:grid-cols-3 pt-20 md:h-60   gap-y-12 items-center  ">
+                <div class="relative grid  items-end">
+                    <div
+                        class=" border-8 rounded-full border-white  absolute   xl:bottom-[110px] xl:left-[130px] 2xl:left-[180px] md:bottom-[110px] md:left-[80px] lg:left-[110px] left-[100px] bottom-[100px]">
+                        <i class="size-14 rounded-full bg-pink-600 pl-[22px] pt-[20px] fa-solid fa-location-dot"></i>
+                    </div>
+                    <div class="grid  border-0  h-36 w-[95%] bg-white">
+                        <p class="text-2xl grid justify-center items-end">ADDRESS</p>
+                        <p class="flex justify-center">509 Myrtle Ave, Brooklyn, NY 11205, USA</p>
+                    </div>
+                </div>
+                <div class="relative grid items-end">
+                    <div
+                        class=" border-8 rounded-full border-white  absolute  xl:bottom-[110px] xl:left-[130px] 2xl:left-[180px]  md:bottom-[110px] md:left-[80px] lg:left-[110px] left-[100px] bottom-[100px]">
+                        <i class="size-14 rounded-full bg-pink-600 pl-[20px] pt-[20px] fa-solid fa-phone"></i>
+                    </div>
+                    <div class="grid  border-0  h-36 w-[95%] bg-white ">
+                        <p class="text-2xl flex justify-center items-end">PHONE</p>
+                        <p class="flex justify-center">+1 718-783-1936 +1 718-783-1966</p>
+                    </div>
+                </div>
+                <div class="relative grid  items-end">
+                    <div
+                        class=" border-8 rounded-full border-white  absolute  md:bottom-[110px] md:left-[80px] 2xl:left-[180px] xl:bottom-[110px] xl:left-[130px] lg:left-[110px] left-[100px] bottom-[100px]">
+                        <i class="size-14 rounded-full bg-pink-600 pl-[20px] pt-[20px] fa-solid fa-envelope"></i>
+                    </div>
+                    <div class="grid  border-0 h-36 w-[95%] bg-white ">
+                        <p class="text-2xl flex justify-center items-end">EMAIL</p>
+                        <p class="flex justify-center">Makeup.artist@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid items-end pt-16  justify-center xl:items-end md:items-center  xl:h-36 md:h-24 h-60 ">
+                <div>
+                    <img src="../asset/logo.png.webp" class="pb-3">
+                    <p class="pb-3">Follow us on @makeupartist</p>
+                </div>
+            </div>
+            <div>
+                <div class="justify-center pt-8 grid grid-cols-5 gap-2">
+                    <img src="../asset/page5.jpeg">
+                    <img src="../asset/page4.jpeg">
+                    <img src="../asset/page3.jpeg">
+                    <img src="../asset/page2.jpeg">
+                    <img src="../asset/page-1.jpeg">
+                </div>
+            </div>
+            <div class="grid  md:flex justify-between items-center h-16 md:pb-0 ">
+                <div class=" text-lg">
+                    <p>Copyright ©2024 All rights reserved | This template is made with <span><i
+                                class="fa-solid fa-heart"></i></span> by <span class="text-pink-600"> Colorlib</span>
+                    </p>
+                </div>
+                <div class="flex pt-1 bg-pink-100 md:items-center gap-2 md:pt-0">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="contact-us-container">
+      <h2>Contact Us</h2>
+      <form id="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="Your Name" readonly>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="your.email@example.com" readonly>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" placeholder="Your message..." required></textarea>
+
+        <button type="submit">Send</button>
+      </form>
+      <p id="form-response"></p>
+    </div>
+
+
+</body>
+
+</html>

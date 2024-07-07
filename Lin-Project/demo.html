@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>container</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Euphoria+Script&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pinyon+Script&family=Rouge+Script&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="bg-pink-50">
+        <div class=" grid grid-cols-1 justify-center w-full  justify-center">
+            <div class="grid grid-rows-1  md:grid-cols-1 xl:grid-cols-2">
+                <div class=" text-center  pt-36 md:h-[552px] h-96  text-white "
+                    style=" background-image: url(../Asset/callto-text-bg.jpeg);">
+                    <p class="md:text-4xl text-xl">BOOK ONLINE FOR</p>
+                    <p class="md:text-6xl text-xl" style="font-family: Parisienne" cursive;">20% discount</p>
+                </div>
+                <div class=" md:grid-cols-1 grid-cols-1 md:h-[552px] h-96 "
+                    style="background-image: url(../Asset/callto-quote-bg.jpg.webp);">
+                    <div class="grid items-center px-12 justify-center md:grid">
+                        <div>
+                            <div class="md:gap-y-6 md:pb-10 pt-12 pb-2">
+                                <p class="text-white md:text-4xl text-2xl  pt-8">GET A QUOTE</p>
+                            </div>
+                            <div class="md:flex  md:pb-8 flex gap-8  ">
+                                <input type="text" id="fname" name="fname" placeholder="Name" maxlength="15"
+                                    class="h-12 w-72 pl-2">
+                                <input type="number" id="fname" name="fname" placeholder="Phone Number" maxlength="15"
+                                    class="h-12 w-72 pl-2">
+                            </div>
+                            <div class="flex  pb-1 md:flex gap-8 md:pb-8">
+                                <input type="text" id="fname" name="fname" placeholder="Email" maxlength="25"
+                                    class="h-12 w-72 pl-2">
+                                <input type="text" id="fname" name="fname" placeholder="choose services" maxlength="25"
+                                    class="h-12 w-72 pl-2">
+                            </div>
+                            <div>
+                                <textarea id="about" name="about" rows="4" cols="70"
+                                    class="md:col-span-2 md:pl-4 md:w-[100%] col-span-2 pl-2 w-[98%] font-light ">Your message</textarea>
+                            </div>
+                            <div class="md:pt-6  ">
+                                <button
+                                    class="bg-pink-500 md:h-12 md:grid items-center md:w-48 text-white h-8 w-36 font-bold rounded-none">
+                                    BOOK SERVICES
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="grid justify-center pt-8 px-20 grid grid-rows-2  md:grid-rows-1 items-center " >
+                <div class="grid md:grid-cols-3 h-60 gap-8 md:gap-x-3 items-end   ">
+                    <div class="relative grid  ">
+                        <div
+                            class=" border-8 rounded-full border-white  absolute bottom-[108px] left-[103px]  xl:bottom-[110px] xl:left-[170px] 2xl:left-[180px] md:bottom-[110px] md:left-[80px] lg:left-[110px] left-[100px] bottom-[100px]">
+                            <i
+                                class="size-14 rounded-full bg-pink-600 pl-[22px] pt-[20px] fa-solid fa-location-dot"></i>
+                        </div>
+                        <div class="grid grid-rows-1 h-36 w-[325px] md:h-[130px] md:w-[200px] lg:h-36 lg:w-[425px] bg-white ">
+                            <p class="text-2xl grid justify-center  items-end font-light " >ADDRESS</p>
+                            <p class="flex justify-center pb-10 font-light" >509 Myrtle Ave, Brooklyn, NY 11205, USA</p>
+                        </div>
+                    </div>
+                    <div class="relative grid ">
+                        <div
+                            class=" border-8 rounded-full border-white  absolute bottom-[110px] left-[107px] xl:bottom-[110px] xl:left-[170px] 2xl:left-[180px]  md:bottom-[110px] md:left-[80px] lg:left-[110px] left-[100px] bottom-[100px]">
+                            <i class="size-14 rounded-full bg-pink-600 pl-[20px] pt-[20px] fa-solid fa-phone"></i>
+                        </div>
+                        <div class="grid grid-rows-1 h-36 w-[325px] md:h-[130px] md:w-[200px] lg:h-36 lg:w-[425px] bg-white ">
+                            <p class="text-2xl grid justify-center  items-end font-light">PHONE</p>
+                            <p class="flex justify-center pb-10 font-light">+1 718-783-1936 +1 718-783-1966</p>
+                        </div>
+                    </div>
+                    <div class="relative grid  ">
+                        <div
+                            class=" border-8 rounded-full border-white  absolute bottom-[110px] left-[107px] md:bottom-[110px] md:left-[80px] 2xl:left-[180px] xl:bottom-[110px] xl:left-[170px] lg:left-[110px] left-[100px] bottom-[100px]">
+                            <i class="size-14 rounded-full bg-pink-600 pl-[20px] pt-[20px] fa-solid fa-envelope"></i>
+                        </div>
+                        <div class="grid grid-rows-1 h-36 w-[325px] md:h-[130px] md:w-[200px] lg:h-36 lg:w-[425px] bg-white ">
+                            <p class="text-2xl flex justify-center items-end font-light">EMAIL</p>
+                            <p class="grid justify-center pb-10 font-light">Makeup.artist@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-rows-1 lg:grid-rows-1 px-20">
+                <div class="grid  items-center  justify-center h-48 " >
+                    <div>
+                        <img src="../Asset/logo.png.webp">
+                        <p class="py-4">Follow us on @makeupartist</p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="justify-center  grid   grid-cols-5 lg:mb-0" >
+                        <img src="../Asset/page5.jpeg" class="p-1 ">
+                        <img src="../Asset/page4.jpeg" class="p-1 ">
+                        <img src="../Asset/page3.jpeg" class="p-1 ">
+                        <img src="../Asset/page2.jpeg" class="p-1  ">
+                        <img src="../Asset/page-1.jpeg" class="p-1  ">
+                    </div>
+                </div>
+                <div class="grid  md:flex justify-between items-center h-16 md:pb-0 ">
+                    <div class=" text-lg">
+                        <p>Copyright ©2024 All rights reserved | This template is made with <span><i
+                                    class="fa-solid fa-heart"></i></span> by <span class="text-pink-600">
+                                Colorlib</span>
+                        </p>
+                    </div>
+                    <div class="flex pt-1 md:items-center gap-2 md:pt-0">
+                        <i class="fa-brands fa-facebook-f"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+</html>

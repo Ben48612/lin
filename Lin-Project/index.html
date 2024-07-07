@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>container</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Tangerine:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Euphoria+Script&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pinyon+Script&family=Rouge+Script&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    .contact-us-container {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .contact-us-container h2 {
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    .contact-us-container form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contact-us-container label {
+        margin-bottom: 5px;
+    }
+
+    .contact-us-container input,
+    .contact-us-container textarea {
+        margin-bottom: 15px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+
+    .contact-us-container input[readonly] {
+        background-color: #f0f0f0;
+        cursor: not-allowed;
+    }
+
+    .contact-us-container textarea {
+        height: 100px;
+        resize: vertical;
+    }
+
+    .contact-us-container button {
+        padding: 10px 15px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .contact-us-container button:hover {
+        background-color: #0056b3;
+    }
+
+    #form-response {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .img2 {
+        background-image: url(/asset/makeup-3.jpeg);
+
+        background-size: 580px 480px;
+        background-repeat: no-repeat;
+
+    }
+
+    .pinyon-script-regular {
+        font-family: "Pinyon Script", cursive;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    .montserrat {
+        font-family: "Montserrat", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+
+    }
+
+    .service-text {
+        padding: 30px 30px;
+        position: relative;
+
+    }
+
+    :hover.animie {
+        position: relative;
+        margin-top: 50px;
+        z-index: 999;
+        background-color: white;
+        transition-duration: 0.5s;
+    }
+
+    .parent:hover .child {
+        display: block;
+    }
+
+    .parent-1:hover .child-1 {
+        display: grid;
+    }
+
+    .tangerine-regular {
+        font-family: "Tangerine", cursive;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    .tangerine-bold {
+        font-family: "Tangerine", cursive;
+        font-weight: 700;
+        font-style: normal;
+    }
+
+    .popup-message {
+        display: none;
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #333;
+        color: white;
+        padding: 15px 30px;
+        border-radius: 5px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        font-size: 16px;
+    }
+
+    .popup-message.show {
+        display: block;
+    }
+</style>
+
+<body class="m-0 p-0 box-border">
+    <div id="popupMessage" class="popup-message"></div>
+    <nav class="sm:h-24 px-16 mx-14 grid items-center">
+        <div class="sm:grid sm:grid-cols-12">
+            <div class="grid  col-span-3 justify-center items-center">
+                <img class="cursor-pointer" src="../asset/logo.png.webp">
+            </div>
+            <div class="grid pt-4 sm:grid col-span-7  sm:grid-rows-2 ">
+                <ul class="grid sm:grid-cols-8 sm:col-span-8 items-center">
+                    <li class="cursor-pointer hover:text-pink-600 hover:text-base"><a href="../src/home.html">Home</a>
+                    </li>
+                    <li class="cursor-pointer hover:text-pink-600 hover:text-base"><a
+                            href="../src/website-1.html">About</a></li>
+                    <li class="cursor-pointer hover:text-pink-600 hover:text-base"><a href="#">Services</a></li>
+                    <li class="cursor-pointer hover:text-pink-600 hover:text-base  "><a href="#">Shop</a></li>
+                    <li class="cursor-pointer hover:text-pink-600 hover:text-base"><a href="#">pages</a></li>
+                    <li class="cursor-pointer hover:text-pink-600 hover:text-base"><a href="#">Blog</a></li>
+                    <li class="cursor-pointer hover:text-pink-600 hover:text-base"><a href="#">Contact</a></li>
+                    <div>
+                        <img class="cursor-pointer sm:pl-3 " src="../asset/search.png.webp">
+                    </div>
+                </ul>
+            </div>
+            <div class="sm:grid col-span-2 py-2 px-1 ">
+                <p
+                    class=" grid justify-center items-center rounded-full border-0 bg-pink-400  text-white  cursor-pointer text-xl  tracking-widest">
+                    GET A QUOTE</p>
+            </div>
+        </div>
+    </nav>
+
+    <div class="">
+
+        <div class="flex relative">
+            <ul id="slider">
+                <li>
+                    <img src="../asset/hero-1.jpg " class=" w-screen md:w-full object-cover">
+                </li>
+                <li class=" relative hidden">
+                    <img src="../asset/img1.png" class="">
+                </li>
+                <li class=" relative hidden">
+                    <img src="../asset/img2.jpg" class="">
+                </li>
+            </ul>
+        </div>
+        <div class="absolute  flex top-0 left-0 h-full w-full  md:top-[20%] ">
+            <div class="my-auto w-full flex justify-between ">
+                <button onclick="prev()" class="bg-[#efe7e75c] rounded-s-lg p-16" style="border-radius: 50%;">
+                    <i class="fa-solid fa-arrow-left text-lg "></i>
+
+                </button>
+                <button onclick="next()" class="bg-[#efe7e75c]  p-16 " style="border-radius: 50%;">
+                    <i class="fa-solid fa-arrow-right text-lg"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="../src/main.js"></script>
+
+    <div
+        class="grid grid-cols-1 md:grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 xl:grid-cols-2 2xl:grid-cols-2 mt-[50px] ml-[50px]">
+
+        <div>
+            <div class="xl:w-[120px] w-[90px] sm:w-[50px] lg:w-[120px] ">
+                <img src="../asset/dot-3.jpg"
+                    class=" mt-[50px] md:mt-[50px]  ml-0 md:ml-[40px] lg:ml-[50px] xl:ml-[30px] "
+                    style="filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(6742%) hue-rotate(306deg) brightness(118%) contrast(76%);">
+
+            </div>
+            <div class=" ml-0 md:ml-[30px] lg:ml-[30px] xl:ml-[80px]">
+                <div>
+                    <h4
+                        class="uppercase text-pink-400 tracking-widest text-2xl md:text-2xl mt-[-120px] lg:mt-[-140px] md:mt-[-140px]  relative">
+                        make your face</h4>
+                </div>
+                <div>
+                    <h1 class="tangerine-regular tangerine-bold  text-3xl md:text-8xl md:text-wrap text-wrap "
+                        style="font-weight: 300;  letter-spacing: 5px; position: relative;">
+                        the center of attention</h1>
+                </div>
+
+                <div class="" style="font-family: Montserrat, ">
+                    <p class=" text-wrap w-screen md:w-[541px] tracking-widest text-sm md:text-base opacity-60">
+                        My love of makeup
+                        started young while often sneaking into my mother’s
+                        makeup vanity and playing with various shades of lipstick, eyeshadow and blush. Makeup became a
+                        full
+                        blown
+                        obsession after four years of art school where I learned to master the airbrush technique.
+                    </p>
+                </div>
+                <div class="mt-10  text-white no-underline uppercase font-medium">
+                    <a href="#more"
+                        class="read-more montserrat text-base md:text-xl md:px-[42px] px-[28px] md:py-[13px] py-[8px]  "
+                        style="border:1px solid #E65783;background-color:#E65783; border-radius: 30px; letter-spacing: 2px;  ">contact
+                        us</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div>
+            <img src="../asset/makeup-3.jpeg" class=" mt-[29px] md:w-[541px] w-full md:h-[441px] h-full">
+        </div>
+    </div>
+
+
+    <div class="bg-fuchsia-100">
+
+        <div class="mt-[300px] ">
+            <img src="../asset/dot-3.jpg" class=" w-[120px] absolute ml-[50%] mt-[30px]"
+                style="filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);">
+
+            <h4 class="uppercase text-pink-400 tracking-widest text-lg md:text-2xl pt-[35px] relative text-center md:text-center mt-[-140px] md:mt-[-130px]  "
+                style="letter-spacing: 3px;">best makeup services</h4>
+
+            <h1 class="pinyon-script-regular font-light text-3xl md:text-7xl  relative text-center md:text-center "
+                style="letter-spacing: 5px; ">
+                professional makeup</h1>
+        </div>
+
+
+        <div
+            class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-7 mt-[100px] md:mt-[67px] pl-[0px] md:pl-[100px] pr-[0px] md:pr-[100px]">
+
+            <div>
+                <div><img src="../asset/daily-makeup.jpeg " class="w-full md:w-[255px] h-full md:h-[340px]"></div>
+                <div
+                    class="service-text montserrat uppercase hover:shadow-lg hover:shadow-black-700 hover:bg-white hover:-translate-y-6 w-[220px] h-[120px] border-0 duration-300">
+                    <h5 class="font-medium">Daily makeup</h5>
+                    <span class="text-pink-400">From $20.0</span>
+                </div>
+            </div>
+            <div>
+
+                <div
+                    class="service-text montserrat uppercase hover:shadow-lg hover:shadow-black-700 hover:translate-y-6 hover:bg-white border-0 w-[220px] h-[120px] duration-300">
+                    <h5 class="font-medium">wedding makeup</h5>
+                    <span class="text-pink-400">From $70.0</span>
+
+                </div>
+                <div><img src="../asset/wedding-makeup.jpeg" class=" h-full md:h-[340px]">
+                </div>
+
+            </div>
+            <div>
+                <div><img src="../asset/event-makeup.jpeg" class="w-full md:w-[255px] h-full md:h-[340px]"></div>
+                <div
+                    class="service-text uppercase montserrat hover:shadow-lg hover:shadow-black-700 hover:-translate-y-6 border-0 hover:bg-white w-[220px] h-[120px] duration-300">
+                    <h5 class="font-medium">event makeup</h5>
+                    <span class="text-pink-400">From $60.0</span>
+                </div>
+            </div>
+            <div>
+                <div
+                    class="service-text uppercase montserrat hover:shadow-lg hover:shadow-black-700 hover:translate-y-6 border-0 hover:bg-white w-[220px] h-[120px] duration-300">
+
+                    <h5 class="font-medium">creative makeup</h5>
+                    <span class="text-pink-400">From $70.0</span>
+                </div>
+                <div><img src="../asset/creative-makeup.jpeg" class="w-full md:w-[255px] h-full md:h-[340px] ">
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <hr class="mt-[100px] ml-[100px] mr-[100px]">
+
+    <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 pl-4 md:pl-0 mt-[10px]  ">
+        <div class="col-span-1 "></div>
+        <div class=" col-span-2 right-10">
+            <div class=" pt-32 flex ">
+                <div class="relative">
+                    <img src="../asset/ta-1.png.webp">
+                </div>
+                <div class="pt-2 pl-6">
+                    <h5 class="text-xl font-medium ">DANIELLE BENTON</h5>
+                    <span class="text-pink-600">Blogger/Client</span>
+                </div>
+
+
+            </div>
+            <div class="pt-6">
+                <p class="  text-base font-normal leading-10 tracking-wide text-wrap">
+                    Rachel you are so amazing at what you do! Thank you so much for everything! I felt so
+                    beautiful on our weddding day.Not only are you superwomen with a makeup brush.
+                    you are so lovely and such a delight to have around the morning of the wedding!!Any
+                    bride would be very lucky to have part of her big day. I am very grateful that you
+                    were part of mine
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div
+        class=" gap-4 pt-[150px] pb-[100px] grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-4 xl:grid-cols-4 ">
+
+
+        <div class="parent">
+            <img src="../asset/img-1.jpeg" class="h-full md:h-[630px] xl:h-[630px]  relative object-cover">
+            <div class=" child hidden bg-pink-400 text-white w-full relative mt-[-90px] pt-5 pl-4 child pb-5 pr-7">
+                <p class="capitalize txt-2">latest projects</p>
+                <h6 class="uppercase txt-3  text-xl">brown hair wave</h6>
+            </div>
+        </div>
+        <div class="grid">
+            <div class="parent mb-[16px]">
+                <img src="../asset/img-2.jpeg" class="h-[305px] w-[305px] relative object-cover">
+                <div class=" child hidden bg-pink-400 text-white w-full relative mt-[-90px]  pt-5 pl-4 pb-5 pr-7">
+                    <p class="capitalize">latest projects</p>
+                    <h6 class="uppercase  text-xl">brown hair wave</h6>
+                </div>
+            </div>
+            <div class="parent">
+                <img src="../asset/img-3.jpeg" class="h-full md:h-[309px] w-[305px]  relative object-cover">
+                <div class=" child hidden bg-pink-400 text-white w-full relative mt-[-90px] pt-5 pl-4 pb-5 pr-7">
+                    <p class="capitalize">latest projects</p>
+                    <h6 class="uppercase  text-xl">brown hair wave</h6>
+                </div>
+            </div>
+        </div>
+        <div class="parent">
+            <img src="../asset/img-7.jpeg" class="h-full md:h-[630px] w-[610px]  relative object-cover">
+            <div class=" child hidden bg-pink-400 text-white w-full relative mt-[-90px] pt-5 pl-4 pb-5 pr-7">
+                <p class="capitalize">latest projects</p>
+                <h6 class="uppercase  text-xl">brown hair wave</h6>
+            </div>
+        </div>
+        <div>
+            <div class="flex gap-6  mb-[16px] grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2  ">
+                <div class="parent">
+                    <img src="../asset/img-5.jpeg" class="h-full md:h-[305px]  relative object-cover">
+                    <div class=" child hidden bg-pink-400 text-white w-full relative mt-[-120px] pt-5 pl-4 pb-5 pr-7">
+                        <p class="capitalize">latest projects</p>
+                        <h6 class="uppercase  text-xl">brown hair wave</h6>
+                    </div>
+                </div>
+                <div class="parent">
+                    <img src="../asset/img-6.jpeg" class="  h-full md:h-[305px] relative object-cover">
+                    <div class=" child hidden bg-pink-400 text-white w-full relative mt-[-120px] pt-5 pl-4 pb-5 pr-7">
+                        <p class="capitalize">latest projects</p>
+                        <h6 class="uppercase  text-xl">brown hair wave</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="parent">
+                <img src="../asset/work-7.jpg" class="h-full md:h-[309px] relative object-cover">
+                <div class=" child hidden bg-pink-400 text-white w-full relative mt-[-90px] pt-5 pl-4 pb-5 pr-7">
+                    <p class="capitalize">latest projects</p>
+                    <h6 class="uppercase  text-xl">brown hair wave</h6>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class=" ">
+        <div>
+            <div class="w-[120px] ml-[50%] xl:ml-[50%] md:ml-0 lg:ml-[50%] ">
+                <img src="../asset/dot-3.jpg"
+                    style="filter: brightness(0) saturate(100%) invert(100%) sepia(63%) saturate(822%) hue-rotate(263deg) brightness(107%) contrast(97%);">
+            </div>
+            <div>
+                <h4 class="uppercase uppercase text-pink-400 tracking-widest text-xl md:text-base lg:text-base xl:text-xl pt-[35px] ml-[130px] sm:ml-[5px] md:ml-[20px] lg:ml-[70px] xl:ml-[130px] relative text-center mt-[-130px] "
+                    style="letter-spacing: 3px;">makeup artist
+                    tips</h4>
+            </div>
+            <div>
+                <h1 class="pinyon-script-regular font-light text-7xl md:text-3xl  lg:text-3xl  xl:text-7xl pl-[130px] relative text-center "
+                    style="letter-spacing: 5px; ">makeup artist tips
+                </h1>
+            </div>
+            <div
+                class="grid grid-cols-1 md:grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6  pt-[50px] px-[120px]sm:px-[20px] md:px-[50px] lg:px-[90px] xl:px-[120px]">
+                <div>
+                    <div class="bg-white shadow-xl ">
+                        <img src="../asset/blog-1.jpg.webp">
+                        <div class="capitalize p-5 ">
+                            <div
+                                class="size-12 relative mt-[-45px] border-0 rounded-full  bg-white text-center p-2 text-pink-400  text-sm md:text-xl hover:cursor-pointer">
+                                <i class="fa-regular fa-image"></i>
+                            </div>
+
+                            <h6 class=" text-lg md:text-2xl  pt-5">tips from makeup artist you've never heard</h6>
+                            <ul class="grid grid-cols-1 md:grid-cols-2 ">
+                                <li class="opacity-80 text-base leading-10">rosie champan <span class="pl-4 ">|</span>
+                                </li>
+                                <li class="text-gray-500 leading-10">june 15 2020</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="bg-white shadow-xl ">
+                        <img src="../asset/blog-2.jpg.webp">
+                        <div class="p-5 capitalize">
+                            <div
+                                class="size-12 relative mt-[-45px] border-0 rounded-full  bg-white text-center p-2 text-pink-400 text-sm md:text-xl hover:cursor-pointer">
+                                <i class="fa-regular fa-file-lines"></i>
+                            </div>
+                            <h6 class="text-lg md:text-2xl  pt-5">everything i learned from a professional makeup artist
+                            </h6>
+                            <ul class="grid grid-cols-1 md:grid-cols-2">
+                                <li class="opacity-80 text-base leading-10">rosie champan <span class="pl-4 ">|</span>
+                                </li>
+                                <li class="text-gray-500 leading-10">june 15 2020</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="bg-white shadow-xl ">
+                        <img src="../asset/blog-3.jpg.webp">
+                        <div class="p-5 capitalize">
+                            <div
+                                class="size-12 relative mt-[-45px] border-0 rounded-full  bg-white text-center p-2 text-pink-400 text-sm md:text-xl hover:cursor-pointer">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                            <h6 class="text-lg md:text-2xl pt-5">10 makeup artist tips that surprised (and delighted) us
+                            </h6>
+                            <ul class="grid grid-cols-1 md:grid-cols-2 ">
+                                <li class="opacity-80 text-base leading-10">rosie champan<span
+                                        class="pl-4 leading-10">|</span></li>
+                                <li class="text-gray-500 leading-10">june 15 2020</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mt-[100px] bg-fuchsia-100">
+        <div class="pt-[100px] ">
+            <div class="w-[120px] ml-[50%] ">
+                <img src="../asset/dot-3.jpg" class=""
+                    style="filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);">
+            </div>
+            <div>
+                <h4 class="uppercase uppercase text-pink-400 tracking-widest text-xl pt-[35px] ml-[130px] relative text-center mt-[-130px] "
+                    style="letter-spacing: 3px;">beauty products</h4>
+            </div>
+            <div>
+                <h1 class="pinyon-script-regular font-light text-7xl pl-[130px] relative text-center  capitalize "
+                    style="letter-spacing: 5px; ">beauty products</h1>
+            </div>
+        </div>
+
+
+        <div class="container w-full p-[80px] justify-items-center 
+        swiper snap-none ">
+            <div class="slider-wrapper relative overflow-hidden">
+                <div class="image-list gap-[18px]  overflow-x-hidden swiper-wrapper">
+                    <div class="grid">
+                        <div class="image-item swiper-slide flex flex-col  w-[330px] parent-1 ">
+                            <img src="../asset/product-4.jpg.webp"
+                                class="image-item w-[330px] h-[330px] object-cover relative">
+
+                            <div class="gap-3 grid absolute child-1 hidden ">
+                                <i
+                                    class="fa-solid fa-cart-shopping border-2  rounded-full  p-[15px] w-[50px] h-[50px] bg-white hover:bg-pink-400 hover:cursor-pointer"></i>
+                                <i
+                                    class="fa-solid fa-heart border-2   p-[15px] w-[50px] h-[50px] rounded-full bg-white hover:bg-pink-400 hover:cursor-pointer"></i>
+                                <i
+                                    class="fa-solid fa-eye  border-2  p-[15px] w-[50px] h-[50px] rounded-full bg-white hover:bg-pink-400 hover:cursor-pointer"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <ul class="text-center capitalize pt-5 ">
+                                <li class="text-gray-500  ">palettes</li>
+                                <li>leather shopper bag</li>
+                                <li class="text-pink-400">$49.00</li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <div class="image-item swiper-slide w-[330px] parent-1 flex flex-col">
+                            <img src="../asset/product-1.jpg.webp"
+                                class="image-item w-[330px] h-[330px] object-cover relative">
+                            <div class="gap-3 grid absolute child-1 hidden">
+                                <i
+                                    class="fa-solid fa-cart-shopping border-2  rounded-full  p-[15px] w-[50px] h-[50px] bg-white hover:bg-pink-400 hover:cursor-pointer"></i>
+                                <i
+                                    class="fa-solid fa-heart border-2   p-[15px] w-[50px] h-[50px] rounded-full bg-white hover:bg-pink-400 hover:cursor-pointer"></i>
+                                <i
+                                    class="fa-solid fa-eye  border-2  p-[15px] w-[50px] h-[50px] rounded-full bg-white hover:bg-pink-400 hover:cursor-pointer"></i>
+                            </div>
+                        </div>
+
+                        <div>
+                            <ul class="text-center capitalize pt-5">
+                                <li class="text-gray-500  ">palettes</li>
+                                <li>leather shopper bag</li>
+                                <li class="text-pink-400">$49.00</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <div class="image-item swiper-slide w-[330px] parent-1 flex flex-col">
+                            <img src="../asset/product-2.jpg.webp"
+                                class="image-item w-[330px] h-[330px] object-cover relative">
+                            <div class="gap-3 grid absolute child-1 hidden">
+                                <i
+                                    class="fa-solid fa-cart-shopping border-2  rounded-full  p-[15px] w-[50px] h-[50px] bg-white hover:bg-pink-400 hover:cursor-pointer"></i>
+                                <i
+                                    class="fa-solid fa-heart border-2   p-[15px] w-[50px] h-[50px] rounded-full bg-white hover:bg-pink-400 hover:cursor-pointer"></i>
+                                <i
+                                    class="fa-solid fa-eye  border-2  p-[15px] w-[50px] h-[50px] rounded-full bg-white hover:bg-pink-400 hover:cursor-pointer"></i>
+                            </div>
+                        </div>
+
+                        <div>
+                            <ul class="text-center capitalize pt-5">
+                                <li class="text-gray-500  ">palettes</li>
+                                <li>leather shopper bag</li>
+                                <li class="text-pink-400">$49.00</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <div class="image-item swiper-slide w-[330px] parent-1 flex flex-col">
+                            <img src="../asset/product-4.jpg.webp"
+                                class="image-item w-[330px] h-[330px] object-cover relative">
+                            <div class="gap-3 grid absolute child-1 hidden">
+                                <i
+                                    class="fa-solid fa-cart-shopping border-2  rounded-full  p-[15px] w-[50px] h-[50px] bg-white hover:bg-pink-400 hover:cursor-pointer"></i>
+                                <i
+                                    class="fa-solid fa-heart border-2   p-[15px] w-[50px] h-[50px] rounded-full bg-white hover:bg-pink-400 hover:cursor-pointer"></i>
+                                <i
+                                    class="fa-solid fa-eye  border-2  p-[15px] w-[50px] h-[50px] rounded-full bg-white hover:bg-pink-400 hover:cursor-pointer"></i>
+                            </div>
+                        </div>
+
+                        <div>
+                            <ul class="text-center capitalize pt-5">
+                                <li class="text-gray-500  ">palettes</li>
+                                <li>leather shopper bag</li>
+                                <li class="text-pink-400">$49.00</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <div class="image-item swiper-slide w-[330px] parent-1 flex flex-col">
+                            <img src="../asset/product-3.jpg.webp"
+                                class="image-item w-[330px] h-[330px] object-cover relative">
+                            <div class="gap-3 grid absolute child-1 hidden">
+                                <i
+                                    class="fa-solid fa-cart-shopping border-2  rounded-full  p-[15px] w-[50px] h-[50px] bg-white hover:bg-pink-400 hover:cursor-pointer"></i>
+                                <i
+                                    class="fa-solid fa-heart border-2   p-[15px] w-[50px] h-[50px] rounded-full bg-white hover:bg-pink-400 hover:cursor-pointer"></i>
+                                <i
+                                    class="fa-solid fa-eye  border-2  p-[15px] w-[50px] h-[50px] rounded-full bg-white hover:bg-pink-400 hover:cursor-pointer"></i>
+                            </div>
+                        </div>
+
+                        <div>
+                            <ul class="text-center capitalize pt-5">
+                                <li class="text-gray-500  ">palettes</li>
+                                <li>leather shopper bag</li>
+                                <li class="text-pink-400">$49.00</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <div class="image-item swiper-slide w-[330px] parent-1 flex flex-col">
+                            <img src="../asset/product-1.jpg.webp"
+                                class="image-item w-[330px] h-[330px] object-cover relative">
+                            <div class="gap-3 grid absolute child-1 hidden">
+                                <i
+                                    class="fa-solid fa-cart-shopping border-2  rounded-full  p-[15px] w-[50px] h-[50px] bg-white hover:bg-pink-400 hover:cursor-pointer"></i>
+                                <i
+                                    class="fa-solid fa-heart border-2   p-[15px] w-[50px] h-[50px] rounded-full bg-white hover:bg-pink-400 hover:cursor-pointer"></i>
+                                <i
+                                    class="fa-solid fa-eye  border-2  p-[15px] w-[50px] h-[50px] rounded-full bg-white hover:bg-pink-400 hover:cursor-pointer"></i>
+                            </div>
+                        </div>
+
+                        <div>
+                            <ul class="text-center capitalize pt-5">
+                                <li class="text-gray-500  ">palettes</li>
+                                <li>leather shopper bag</li>
+                                <li class="text-pink-400">$49.00</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <div class="image-item swiper-slide w-[330px] parent-1 flex flex-col">
+                            <img src="../asset/product-2.jpg.webp"
+                                class="image-item w-[330px] h-[330px] object-cover relative">
+                            <div class="gap-3 grid absolute child-1 hidden">
+                                <i
+                                    class="fa-solid fa-cart-shopping border-2  rounded-full  p-[15px] w-[50px] h-[50px] bg-white hover:bg-pink-400 hover:cursor-pointer"></i>
+                                <i
+                                    class="fa-solid fa-heart border-2   p-[15px] w-[50px] h-[50px] rounded-full bg-white hover:bg-pink-400 hover:cursor-pointer"></i>
+                                <i
+                                    class="fa-solid fa-eye  border-2  p-[15px] w-[50px] h-[50px] rounded-full bg-white hover:bg-pink-400 hover:cursor-pointer"></i>
+                            </div>
+                        </div>
+
+                        <div>
+                            <ul class="text-center capitalize pt-5">
+                                <li class="text-gray-500  ">palettes</li>
+                                <li>leather shopper bag</li>
+                                <li class="text-pink-400">$49.00</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <div class="image-item swiper-slide w-[330px] parent-1 flex flex-col">
+                            <img src="../asset/product-3.jpg.webp"
+                                class="image-item w-[330px] h-[330px] object-cover relative">
+                            <div class="gap-3 grid absolute child-1 hidden">
+                                <i
+                                    class="fa-solid fa-cart-shopping border-2  rounded-full  p-[15px] w-[50px] h-[50px] bg-white hover:bg-pink-400 hover:cursor-pointer"></i>
+                                <i
+                                    class="fa-solid fa-heart border-2   p-[15px] w-[50px] h-[50px] rounded-full bg-white hover:bg-pink-400 hover:cursor-pointer"></i>
+                                <i
+                                    class="fa-solid fa-eye  border-2  p-[15px] w-[50px] h-[50px] rounded-full bg-white hover:bg-pink-400 hover:cursor-pointer"></i>
+                            </div>
+                        </div>
+
+                        <div>
+                            <ul class="text-center capitalize pt-5">
+                                <li class="text-gray-500  ">palettes</li>
+                                <li>leather shopper bag</li>
+                                <li class="text-pink-400">$49.00</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <div class="image-item swiper-slide w-[330px] parent-1 flex flex-col">
+                            <img src="../asset/product-4.jpg.webp"
+                                class="image-item w-[330px] h-[330px] object-cover relative">
+                            <div class="gap-3 grid absolute child-1 hidden">
+                                <i
+                                    class="fa-solid fa-cart-shopping border-2  rounded-full  p-[15px] w-[50px] h-[50px] bg-white hover:bg-pink-400 hover:cursor-pointer"></i>
+                                <i
+                                    class="fa-solid fa-heart border-2   p-[15px] w-[50px] h-[50px] rounded-full bg-white hover:bg-pink-400 hover:cursor-pointer"></i>
+                                <i
+                                    class="fa-solid fa-eye  border-2  p-[15px] w-[50px] h-[50px] rounded-full bg-white hover:bg-pink-400 hover:cursor-pointer"></i>
+                            </div>
+                        </div>
+
+                        <div>
+                            <ul class="text-center capitalize pt-5">
+                                <li class="text-gray-500  ">palettes</li>
+                                <li>leather shopper bag</li>
+                                <li class="text-pink-400">$49.00</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="swiper-button-prev text-gray-500"></div>
+                    <div class="swiper-button-next text-gray-500"></div>
+                </div>
+
+            </div>
+            <div class="mt-[30px] mb-[20px] text-center tracking-widest"><span
+                    class="uppercase border-b-2  border-orange-950 pb-2 px-3">view all products</span>
+            </div>
+        </div>
+
+        <div class="bg-pink-100">
+            <div class=" grid grid-cols-1 justify-center w-full">
+                <div class="grid grid-cols-1  md:grid-cols-1 xl:grid-cols-2">
+                    <div class=" text-center  pt-36 h-[550px]  text-white "
+                        style=" background-image: url(../asset/calto-1.jpg);">
+                        <p class="md:text-4xl text-xl text-pink-400 tracking-widest">BOOK ONLINE FOR</p>
+                        <p class="md:text-[150px] text-xl tangerine-regular tangerine-bold p-[90px]">20% discount</p>
+                    </div>
+                    <div class=" md:grid-cols-1 grid-cols-1  h-[550px] "
+                        style="background-image: url(../asset/callto-quote-bg.jpg.webp);">
+
+                        <div class="grid items-center justify-center px-24">
+                            <div>
+                                <div class="">
+                                    <p class="text-white md:text-4xl text-2xl  pt-20 pb-11">GET A QUOTE</p>
+                                </div>
+                                <div class=" grid gap-8">
+                                    <div class=" flex gap-8">
+                                        <input type="text" name="fname" placeholder="Name" maxlength="15"
+                                            class="h-[46px] w-full pl-2 montserrat">
+                                        <input type="number" name="fname" placeholder="Phone Number" maxlength="15"
+                                            class="h-[46px] w-full pl-2 montserrat">
+                                    </div>
+                                    <div class=" flex gap-8">
+                                        <input type="text" name="fname" placeholder="Email" maxlength="25"
+                                            class="h-[46px] w-full pl-2 montserrat">
+                                        <input type="text" name="fname" placeholder="choose services" maxlength="25"
+                                            class="h-[46px] w-full pl-2 montserrat">
+                                    </div>
+
+                                    <div>
+                                        <textarea id="about" name="about" rows="4" cols="70"
+                                            class="md:col-span-2 md:pl-4 md:w-[100%] col-span-2 pl-2 w-[98%] text-gray-400 pt-4 text-lg montserrat">Your message</textarea>
+                                    </div>
+                                </div>
+                                <div class="md:py-4  py-2">
+                                    <button
+                                        class="bg-pink-500 md:h-12 md:grid items-center md:w-48 text-white h-8 w-36 font-medium  rounded-none montserrat tracking-widest">
+                                        BOOK SERVICES
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="grid justify-center pt-8 px-24  grid items-center">
+                    <div class="grid md:grid-cols-3 pt-20 md:h-60   gap-y-12 items-center  ">
+                        <div class="relative grid  items-end">
+                            <div
+                                class=" border-8 rounded-full border-white  absolute   xl:bottom-[110px] xl:left-[130px] 2xl:left-[180px] md:bottom-[110px] md:left-[80px] lg:left-[110px] left-[100px] bottom-[100px]">
+                                <i
+                                    class="size-14 rounded-full bg-pink-600 pl-[22px] pt-[20px] fa-solid fa-location-dot"></i>
+                            </div>
+                            <div class="grid  border-0  h-36 w-[95%] bg-white">
+                                <p class="text-2xl grid justify-center items-end">ADDRESS</p>
+                                <p class="flex justify-center">509 Myrtle Ave, Brooklyn, NY 11205, USA</p>
+                            </div>
+                        </div>
+                        <div class="relative grid items-end">
+                            <div
+                                class=" border-8 rounded-full border-white  absolute  xl:bottom-[110px] xl:left-[130px] 2xl:left-[180px]  md:bottom-[110px] md:left-[80px] lg:left-[110px] left-[100px] bottom-[100px]">
+                                <i class="size-14 rounded-full bg-pink-600 pl-[20px] pt-[20px] fa-solid fa-phone"></i>
+                            </div>
+                            <div class="grid  border-0  h-36 w-[95%] bg-white ">
+                                <p class="text-2xl flex justify-center items-end">PHONE</p>
+                                <p class="flex justify-center">+1 718-783-1936 +1 718-783-1966</p>
+                            </div>
+                        </div>
+                        <div class="relative grid  items-end">
+                            <div
+                                class=" border-8 rounded-full border-white  absolute  md:bottom-[110px] md:left-[80px] 2xl:left-[180px] xl:bottom-[110px] xl:left-[130px] lg:left-[110px] left-[100px] bottom-[100px]">
+                                <i
+                                    class="size-14 rounded-full bg-pink-600 pl-[20px] pt-[20px] fa-solid fa-envelope"></i>
+                            </div>
+                            <div class="grid  border-0 h-36 w-[95%] bg-white ">
+                                <p class="text-2xl flex justify-center items-end">EMAIL</p>
+                                <p class="flex justify-center">Makeup.artist@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="grid items-end pt-16  justify-center xl:items-end md:items-center  xl:h-36 md:h-24 h-60 ">
+                        <div>
+                            <img src="../asset/logo.png.webp" class="pb-3">
+                            <p class="pb-3">Follow us on @makeupartist</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="justify-center pt-8 grid grid-cols-5 gap-2">
+                            <img src="../asset/page5.jpeg">
+                            <img src="../asset/page4.jpeg">
+                            <img src="../asset/page3.jpeg">
+                            <img src="../asset/page2.jpeg">
+                            <img src="../asset/page-1.jpeg">
+                        </div>
+                    </div>
+                    <div class="grid  md:flex justify-between items-center h-16 md:pb-0 ">
+                        <div class=" text-lg">
+                            <p>Copyright ©2024 All rights reserved | This template is made with <span><i
+                                        class="fa-solid fa-heart"></i></span> by <span class="text-pink-600">
+                                    Colorlib</span>
+                            </p>
+                        </div>
+                        <div class="flex pt-1 bg-pink-100 md:items-center gap-2 md:pt-0">
+                            <i class="fa-brands fa-facebook-f"></i>
+                            <i class="fa-brands fa-twitter"></i>
+                            <i class="fa-brands fa-instagram"></i>
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="contact-us-container">
+
+
+            <h2>Contact Us</h2>
+            <div class="signinContainer">
+
+                <div id="g_id_onload"
+                    data-client_id="500761306150-vjbp2dceg2cflt5ef0vsvburi0j1ufo2.apps.googleusercontent.com"
+                    data-callback="handleCredentialResponse">
+                    <p id="note" style="color:red;size:8px;margin-bottom: 5px;">Note : You Need to signin with google
+                        for Name and Email.
+                    </p>
+                </div>
+                <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="outline"
+                    data-text="sign_in_with" data-size="large" data-logo_alignment="left">
+                </div>
+            </div>
+
+            <form id="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" value="" readonly>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" value="" readonly>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" placeholder="Your message..." required></textarea>
+
+                <button id="sendEmailButton" style="display:none" type="submit">Send</button>
+            </form>
+
+        </div>
+
+
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+
+    var serviceId = "service_trp341m";
+    var templateId = "template_ygbuxna";
+    var userId = "zQ4hn1d_0DvFNfYBf";
+
+    document.addEventListener('DOMContentLoaded', function () {
+        emailjs.init(userId); // Replace 'YOUR_USER_ID' with your actual user ID from EmailJS
+
+        document.getElementById('contact-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const fromEmail = document.getElementById('email').value;
+            const fromName = document.getElementById('name').value;
+            // const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            const templateParams = {
+                from_email: fromEmail,
+                from_name: fromName,
+                message: message
+            };
+
+            emailjs.send(serviceId, templateId, templateParams)
+                .then(function (response) {
+                    showPopupMessage("Mail Sent Successfully!");
+                    document.getElementById("name").value = "";
+                    document.getElementById("email").value = "";
+                    document.getElementById("message").value = "";
+                    document.getElementById("sendEmailButton").style = "display:none";
+                }, function (error) {
+                    alert('FAILED...', error);
+                });
+        });
+    });
+
+    function handleCredentialResponse(response) {
+        // Decode the JWT response.
+        const responsePayload = parseJwt(response.credential);
+        // console.log('ID: ' + responsePayload.sub);
+        // console.log('Full Name: ' + responsePayload.name);
+        // console.log('Given Name: ' + responsePayload.given_name);
+        // console.log('Family Name: ' + responsePayload.family_name);
+        // console.log('Image URL: ' + responsePayload.picture);
+        // console.log('Email: ' + responsePayload.email);
+
+        // document.getElementsByClassName("signinContainer");
+        document.getElementById("name").value = responsePayload.name;
+        document.getElementById("email").value = responsePayload.email;
+
+        document.getElementById("note").style = "display:none";
+        document.getElementById("sendEmailButton").style = "display:block";
+
+
+
+        // Display the email address on the page
+        document.getElementById('user-email').textContent = `Signed in as: ${responsePayload.email}`;
+        document.getElementById('user-email').classList.remove('hidden');
+    }
+
+    function parseJwt(token) {
+        var base64Url = token.split('.')[1];
+        var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        var jsonPayload = decodeURIComponent(atob(base64).split('').map(function (c) {
+            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        }).join(''));
+
+        return JSON.parse(jsonPayload);
+    }
+
+    function showPopupMessage(message) {
+        const popup = document.getElementById('popupMessage');
+        popup.textContent = message;
+        popup.classList.add('show');
+
+        // Hide the popup after 3 seconds
+        setTimeout(() => {
+            popup.classList.remove('show');
+        }, 5000);
+    }
+
+</script>
+
+</html>

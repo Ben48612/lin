@@ -26,9 +26,9 @@ const swiper = new Swiper('.slider-wrapper', {
 
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('contact-form').addEventListener('submit', function(event) {
-        event.preventDefault();
-        document.getElementById('form-response').textContent = 'Your message has been sent!';
-    });
-});
+// document.addEventListener('DOMContentLoaded', function() {
+//     document.getElementById('contact-form').addEventListener('submit', function(event) {
+//         event.preventDefault();
+//         document.getElementById('form-response').textContent = 'Your message has been sent!';
+//     });
+// });

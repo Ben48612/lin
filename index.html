@@ -933,10 +933,6 @@
         document.getElementById("sendEmailButton").style = "display:block";
 
 
-
-        // Display the email address on the page
-        document.getElementById('user-email').textContent = `Signed in as: ${responsePayload.email}`;
-        document.getElementById('user-email').classList.remove('hidden');
     }
 
     function parseJwt(token) {
